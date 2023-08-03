@@ -1,0 +1,83 @@
+while True:
+    print("----------------- showroom motor dan mobil bikers2ndsport -----------------")
+    pembeli = input("Masukkan nama Pembeli: ")
+    print("Nama Pembeli :", pembeli)
+
+    def fungsimotor():
+        global totalmtr
+        global unit
+        global mtr
+        print("\n----------------- list Motor -----------------")
+        print("1. H2r - Rp 15,000,000")
+        print("2. R1m - Rp 10,000,000")
+        print("3. Ducati - Rp 20,000,000")
+        nomor = int(input("Masukkan Pilihan:..... "))
+        unit = int(input("Berapa unit: "))
+
+        if nomor == 1:
+            totalmtr = unit * 15000000
+            print(unit, " unit H2r = Rp", totalmtr)
+            mtr = "H2r"
+        elif nomor == 2:
+            totalmtr = unit * 10000000
+            print(unit, " unit R1m = Rp", totalmtr)
+            mtr = "R1m"
+        elif nomor == 3:
+            totalmtr = unit * 20000000
+            print(unit, " unit Ducati = Rp", totalmtr)
+            mtr = "Ducati"
+        else:
+            print("Pilihan tidak ada, silahkan masukkan lagi!!")
+            fungsimotor()
+
+    def fungsimobil():
+        global totalmbl
+        global mbl
+        global unit
+        print("\n----------------- list Mobil -----------------")
+        print("1. Alphard - Rp 20,000,000")
+        print("2. Fortuner - Rp 35,000,000")
+        print("3. Civic - Rp 40,000,000")
+        nomor = int(input("Masukkan Pilihan: "))
+        unit = int(input("Berapa unit: "))
+
+        if nomor == 1:
+            totalmbl = unit * 20000000
+            print(unit, " unit Alphard = Rp", totalmbl)
+            mbl = "Alphard"
+        elif nomor == 2:
+            totalmbl = unit * 35000000
+            print(unit, " unit Fortuner = Rp", totalmbl)
+            mbl = "Fortuner"
+        elif nomor == 3:
+            totalmbl = unit * 40000000
+            print(unit, " unit Civic = Rp", totalmbl)
+            mbl = "Civic"
+        else:
+            print("Pilihan tidak ada, silahkan masukkan lagi!!")
+            fungsimobil()
+
+    fungsimotor()
+    fungsimobil()
+    totalsemua = totalmtr + totalmbl
+
+    print("\nTotal harus Dibayar: Rp", totalsemua)
+    uang = int(input("Uang Tunai Pembeli: Rp "))
+    kembalian = int(uang - totalsemua)
+    print("Kembalian :", kembalian)
+
+    print("\n==================================")
+    print("========== S T R U K   B E L I =========")
+    print("==================================\n")
+    print("Nama\t\t:", pembeli)
+    print("Beli\t\t:", unit, mtr, "( Rp", totalmtr, ")")
+    print("Beli\t\t ", unit, mbl, "( Rp", totalmbl, ")")
+    print("Tagihan\t\t: Rp", totalsemua)
+    print("Dibayar\t\t: Rp", uang)
+    print("Kembalian\t: Rp", kembalian)
+    print("--------------------------")
+    pilihan = input("Apakah anda ingin order kembali Y/N = ")
+    print("==================================")
+    print("==================================")
+    if pilihan.upper() != 'Y':
+        break
